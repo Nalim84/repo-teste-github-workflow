@@ -17,18 +17,15 @@ on: #A PARTIR DE QUAL AÇÃO ESSE WORKFLOW SERÁ EXECUTADO, SE É ATRAVÉS DE UM
 jobs: # ************ DEFINI OS JOBS DA PIPELINE ***************
   # This workflow contains a single job called "build"
   job01: #DEFINI O JOB
-    runs-on: ubuntu-latest #DEFINI O RUNNER (MAC | LINUX | WINDOWS)
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest #*********** DEFINI O RUNNER (MAC | LINUX | WINDOWS)
     steps: #*********** TODO O WORKFLOW PRECISA TER UM OU MAIS STEPS ***************
-      
+     
     # Steps represent a sequence of tasks that will be executed as part of the job
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      
-      - uses: actions/checkout@v4 #************** A PRIMEIRA ACTION SERÁ DO TIPO CHECKOUT, OU SEJA, VAI BAIXAR O CÓDIGO DO REPOSITÓRIO QUE ESTÁ CONECTADO
-                                  # ************* TODA VEZ QUE RODAR ESSE WORKFLOW, BAIXA O CÓDIGO NOVAMENTE PARA ESSE RUNNER PARA EXECUTAR AS ETAPAS
-      # Runs a single command using the runners shell
+
+      #************** A PRIMEIRA ACTION SERÁ DO TIPO CHECKOUT, OU SEJA, VAI BAIXAR O CÓDIGO DO REPOSITÓRIO QUE ESTÁ CONECTADO
+       # ************* TODA VEZ QUE RODAR ESSE WORKFLOW, BAIXA O CÓDIGO NOVAMENTE PARA ESSE RUNNER PARA EXECUTAR AS ETAPAS
+      - uses: actions/checkout@v4 
       - name: Run a one-line script
         run: echo Hello, world! # *************** RODA UMA LINHA DE COMANDO
 
