@@ -1,0 +1,34 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Meu primeiro workflow no github actions   #NOME DO WORKFLOW
+
+# Controls when the workflow will run
+on: #A PARTIR DE QUAL AÇÃO ESSE WORKFLOW SERÁ EXECUTADO, SE É ATRAVÉS DE UMA PR, OU UM PULL OU PUSH.
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ] # **************** QUALQUER PUSH PARA A BRANCH MAIS ESSE WORKFLOW SERÁ DISPARADO **************** 
+  pull_request:
+    branches: [ "main" ] # **************** QUALQUER PULL REQUEST PARA A BRANCH MAIS ESSE WORKFLOW SERÁ DISPARADO ****************
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch: # **************** POSSIBILITA DISPARADA ESSE WORKFLOW DE FORMA MANUAL, ATRAVÉS DE UM BOTÃO ****************
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs: # ************ DEFINI OS JOBS DA PIPELINE ***************
+  # This workflow contains a single job called "build"
+  job01: #DEFINI O JOB
+    runs-on: ubuntu-latest #DEFINI O RUNNER (MAC | LINUX | WINDOWS)
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    steps: #*********** TODO O WORKFLOW PRECISA TER UM OU MAIS STEPS ***************
+      
+    # Steps represent a sequence of tasks that will be executed as part of the job
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      
+      - uses: actions/checkout@v4 #************** A PRIMEIRA ACTION SERÁ DO TIPO CHECKOUT, OU SEJA, VAI BAIXAR O CÓDIGO DO REPOSITÓRIO QUE ESTÁ CONECTADO
+                                  # ************* TODA VEZ QUE RODAR ESSE WORKFLOW, BAIXA O CÓDIGO NOVAMENTE PARA ESSE RUNNER PARA EXECUTAR AS ETAPAS
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world! # *************** RODA UMA LINHA DE COMANDO
+
