@@ -17,7 +17,7 @@ on: #A PARTIR DE QUAL AÇÃO ESSE WORKFLOW SERÁ EXECUTADO, SE É ATRAVÉS DE UM
 jobs: # ************ DEFINI OS JOBS DA PIPELINE ***************
   # This workflow contains a single job called "build"
   job01: #DEFINI O JOB
-    runs-on: self-hosted #*********** DEFINI O RUNNER (MAC | LINUX | WINDOWS)
+    runs-on: self-hosted #**** ******* DEFINI O RUNNER (MAC | LINUX | WINDOWS)
     steps: #*********** TODO O WORKFLOW PRECISA TER UM OU MAIS STEPS ***************
      
     # Steps represent a sequence of tasks that will be executed as part of the job
